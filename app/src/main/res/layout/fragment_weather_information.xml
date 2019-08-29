@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".WeatherInformation"
+                android:background="@drawable/ic_app_background_image"
+>
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+        >
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"
+                        android:gravity="center"
+                >
+
+                    <ImageView android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@drawable/ic_weather_back"
+                    />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                >
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center"
+                    >
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:textSize="28sp"
+                                  android:text="Wait"
+                                  android:textColor="#ffffff"
+                                  android:id="@+id/txt_temp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="Wait"
+                                  android:textSize="12sp"
+                                  android:textColor="#ffffff"
+                                  android:id="@+id/txt_weather_main"/>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+        >
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:orientation="vertical"
+            >
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:layout_weight="1"
+                              android:orientation="horizontal"
+                >
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:layout_weight="1"
+                    >
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1"
+                                      android:orientation="vertical"
+                                      android:gravity="center"
+                        >
+                            <ImageView android:layout_width="match_parent"
+                                       android:layout_height="match_parent"
+                                       android:layout_weight=".5"
+
+                                       app:srcCompat="@drawable/ic_temprature"/>
+
+                            <TextView android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1"
+                                      android:textColor="#ffffff"
+                                      android:gravity="center"
+                                      android:text="dsfdsfdsfdsf"
+                                      android:id="@+id/txt_min_temp"/>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:layout_weight="1"
+                                  android:orientation="vertical"
+                                  android:gravity="center"
+                    >
+                        <ImageView android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:layout_weight=".5"
+                                  android:src="@drawable/ic_wind_speed"
+                        />
+
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:layout_weight="1"
+                                  android:textColor="#ffffff"
+                                  android:gravity="center"
+                                  android:text="dsfdsfdsfdsf"
+                                  android:id="@+id/txt_wind"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:layout_weight="1"
+                >
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:layout_weight="1"
+                                  android:orientation="horizontal"
+                    >
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1"
+                        >
+                            <LinearLayout android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:layout_weight="1"
+                                          android:orientation="vertical"
+                                          android:gravity="center"
+                            >
+                                <TextView android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:layout_weight=".5"
+                                          android:gravity="center"
+                                          android:textColor="#ffffff"
+                                          android:text="Sunrise"
+                                />
+
+                                <TextView android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:layout_weight="1"
+                                          android:textColor="#ffffff"
+                                          android:gravity="center"
+                                          android:text="dsfdsfdsfdsf"
+                                          android:id="@+id/txt_sunrise"/>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1"
+                        >
+                            <LinearLayout android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:layout_weight="1"
+                                          android:orientation="vertical"
+                                          android:gravity="center"
+                            >
+                                <TextView android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:layout_weight=".5"
+                                          android:gravity="center"
+                                          android:textColor="#ffffff"
+                                          android:text="Sunset"
+                                />
+
+                                <TextView android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:layout_weight="1"
+                                          android:textColor="#ffffff"
+                                          android:gravity="center"
+                                          android:text="dsfdsfdsfdsf"
+                                          android:id="@+id/txt_sunset"/>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
