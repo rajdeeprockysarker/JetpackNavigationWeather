@@ -17,9 +17,11 @@
                       android:orientation="vertical"
         >
 
-            <EditText android:layout_width="150dp"
+            <EditText android:layout_width="250dp"
                       android:hint="Enter Location Name"
                       android:layout_height="wrap_content"
+                      android:textColorHint="#ffffff"
+                      android:textColor="#ffffff"
                       android:id="@+id/edit_location"/>
 
 

@@ -2,15 +2,11 @@ package com.raj.kot
 
 import android.os.*
 import android.util.Log
-import com.google.gson.JsonObject
 import com.raj.jetpacknavigationweather.RetrofitBuilder
 import com.raj.jetpacknavigationweather.pojoo.ReturnWeatherValue
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.os.Parcelable
-import androidx.annotation.IntegerRes
 
 
 class NetworkConnection(CityName:String,handler: Handler?) : AsyncTask<Void, Void, Void>() {
@@ -32,28 +28,34 @@ class NetworkConnection(CityName:String,handler: Handler?) : AsyncTask<Void, Voi
         getCardService!!
             .getAPI()
             //.getResultsCityVal(CityName)
-            .getResultsCityVal("Kolkata","bd354c214651790a279542d5ad7a261f")
+            .getResultsCityVal("11ae2179d2274486af175122190309","Kolkata")
             .enqueue(object : Callback<ReturnWeatherValue> {
                 override fun onResponse(call: Call<ReturnWeatherValue>, response: Response<ReturnWeatherValue>) {
                     Log.e("post", response.message())
 
-                    var jsonobj=JsonObject()
+
 
                     var message=Message()
 
                     var bundle=Bundle()
-                    bundle.putCharSequence("Temp",     response.body()?.main?.temp.toString())
-                    bundle.putCharSequence("main",      (response.body()?.weather)?.get(0)?.main)
-                    bundle.putCharSequence("main", (response.body()?.weather)?.get(0)?.main)
-                    bundle.putCharSequence("temp_max", response.body()?.main?.temp_max.toString())
-                    bundle.putCharSequence("temp_min", response.body()?.main?.temp_min.toString())
+                    bundle.putCharSequence("Temp", response.body()?.current?.temp_c.toString())
+                    bundle.putCharSequence("main",     response.body()?.current?.condition?.text )
 
-                    bundle.putCharSequence("speed", response.body()?.wind?.speed.toString())
-                    bundle.putCharSequence("sunrise", response.body()?.sys?.sunrise.toString())
-                    bundle.putCharSequence("sunset", response.body()?.sys?.sunset.toString())
+                    bundle.putCharSequence("humidity", response.body()?.current?.humidity.toString())
+                    bundle.putCharSequence("rain", response.body()?.current?.precip_mm.toString()+" mm")
+
+                    bundle.putCharSequence("cloud", response.body()?.current?.cloud.toString()+ " %")
 
 
-
+//                    bundle.putCharSequence("temp_max", response.body()?.main?.temp_max.toString())
+//                    bundle.putCharSequence("temp_min", response.body()?.main?.temp_min.toString())
+//
+                    bundle.putCharSequence("speed",  response.body()?.current?.wind_kph.toString()+" kmph")
+//                    bundle.putCharSequence("sunrise", response.body()?.sys?.sunrise.toString())
+//                    bundle.putCharSequence("sunset", response.body()?.sys?.sunset.toString())
+//
+//
+//
                     message.data=bundle
 
                     handler?.sendMessage(message)

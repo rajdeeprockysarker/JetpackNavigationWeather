@@ -12,9 +12,9 @@ interface RetroInterface {
     @GET("api/v1/employees")
      fun getResults(): Call<ResponseBody>
 
-    @GET("data/2.5/weather")
+    @GET("v1/current.json")
     // fun getResultsCityVal(@Query("CityName") CityName: String): Call<ResponseBody>
-    fun getResultsCityVal(@Query("q") query: String,@Query("appid") appid: String): Call<ReturnWeatherValue>
+    fun getResultsCityVal(@Query("key") key: String,@Query("q") CityName: String): Call<ReturnWeatherValue>
 
     @FormUrlEncoded
     @POST("/api/users")

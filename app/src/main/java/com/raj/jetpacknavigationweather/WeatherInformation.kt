@@ -38,22 +38,25 @@ class WeatherInformation : Fragment() {
 
                 val mTemp = msg.data["Temp"]
                 val main = msg.data["main"]
-                val mmain = msg.data["main"]
-                val temp_max = msg.data["temp_max"]
-                val temp_min = msg.data["temp_min"]
-
+                val humidity = msg.data["humidity"]
+                val rain = msg.data["rain"]
+                val cloud = msg.data["cloud"]
+//                val temp_min = msg.data["temp_min"]
+//
                 val speed = msg.data["speed"]
-                val sunrise = msg.data["sunrise"]
-                val sunset = msg.data["sunset"]
-
-
-                Log.v("tag", "" + mTemp)
+//                val sunrise = msg.data["sunrise"]
+//                val sunset = msg.data["sunset"]
+//
+//
+//                Log.v("tag", "" + mTemp)
                 txt_temp.text=mTemp.toString()
                 txt_weather_main.text=main.toString()
-                txt_min_temp.text=temp_min.toString()+" / "+temp_max.toString()
+                txt_humidity.text=humidity.toString()+" %"
                 txt_wind.text=speed.toString()
-                txt_sunrise.text=sunrise.toString()
-                txt_sunset.text=sunset.toString()
+                txt_rain.text=rain.toString()
+                txt_cloud.text=cloud.toString()
+//                txt_sunrise.text=sunrise.toString()
+//                txt_sunset.text=sunset.toString()
 
 
 
