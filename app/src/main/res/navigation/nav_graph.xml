@@ -11,10 +11,10 @@
     </fragment>
     <fragment android:id="@+id/enterLocationFragment2"
               android:name="com.raj.jetpacknavigationweather.EnterLocationFragment"
-              android:label="fragment_enter_location" tools:layout="@layout/fragment_enter_location">
+              android:label="Enter Location" tools:layout="@layout/fragment_enter_location">
         <action android:id="@+id/action_enterLocationFragment2_to_weatherInformation"
                 app:destination="@id/weatherInformation"/>
     </fragment>
     <fragment android:id="@+id/weatherInformation" android:name="com.raj.jetpacknavigationweather.WeatherInformation"
-              android:label="fragment_weather_information" tools:layout="@layout/fragment_weather_information"/>
+              android:label="Weather Information" tools:layout="@layout/fragment_weather_information"/>
 </navigation>

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.util.Log
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.raj.kot.NetworkConnection
 
 class MainActivity : AppCompatActivity() {
@@ -34,5 +36,11 @@ class MainActivity : AppCompatActivity() {
 //
 //
 //        NetworkConnection("Kolkata",handler).execute()
+        NavigationUI.setupActionBarWithNavController(this,findNavController(R.id.nav_host_fragment))
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.nav_host_fragment).navigateUp()
+    }
+
 }

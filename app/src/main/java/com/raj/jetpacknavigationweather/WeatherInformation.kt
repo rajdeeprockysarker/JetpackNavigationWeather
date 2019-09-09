@@ -65,7 +65,7 @@ class WeatherInformation : Fragment() {
                 }
                 else {
                     Toast.makeText(context,"No Result found for "+ Location,Toast.LENGTH_LONG).show()
-                    fragmentManager?.popBackStack();
+
                 }
 
 
@@ -82,6 +82,8 @@ class WeatherInformation : Fragment() {
 
         NetworkConnection(Location,handler).execute()
     }
+
+
 
 
 }
