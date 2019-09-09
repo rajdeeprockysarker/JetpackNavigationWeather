@@ -23,7 +23,11 @@ class EnterLocationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_get_weather.setOnClickListener {
-            findNavController().navigate(R.id.action_enterLocationFragment2_to_weatherInformation)
+
+            var bundle=Bundle()
+            bundle.putCharSequence("Locatoin",edit_location.text.toString())
+
+            findNavController().navigate(R.id.action_enterLocationFragment2_to_weatherInformation,bundle)
         }
     }
 

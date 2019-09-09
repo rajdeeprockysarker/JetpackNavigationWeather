@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityManager
+import android.widget.Toast
 import com.raj.kot.NetworkConnection
 import kotlinx.android.synthetic.main.fragment_weather_information.*
 
@@ -28,6 +30,8 @@ class WeatherInformation : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var Location=arguments?.getString("Locatoin").toString()
 
         handler= Handler()
         handler = object : Handler() {
@@ -49,15 +53,20 @@ class WeatherInformation : Fragment() {
 //
 //
 //                Log.v("tag", "" + mTemp)
-                txt_temp.text=mTemp.toString()
-                txt_weather_main.text=main.toString()
-                txt_humidity.text=humidity.toString()+" %"
-                txt_wind.text=speed.toString()
-                txt_rain.text=rain.toString()
-                txt_cloud.text=cloud.toString()
+                if(mTemp!="null") {
+                    txt_temp.text = mTemp?.toString()
+                    txt_weather_main.text = main?.toString()
+                    txt_humidity.text = humidity?.toString() + " %"
+                    txt_wind.text = speed?.toString()
+                    txt_rain.text = rain?.toString()
+                    txt_cloud.text = cloud?.toString()
 //                txt_sunrise.text=sunrise.toString()
 //                txt_sunset.text=sunset.toString()
-
+                }
+                else {
+                    Toast.makeText(context,"No Result found for "+ Location,Toast.LENGTH_LONG).show()
+                    fragmentManager?.popBackStack();
+                }
 
 
 
@@ -69,7 +78,9 @@ class WeatherInformation : Fragment() {
         }
 
 
-        NetworkConnection("Kolkata",handler).execute()
+        txt_location.text=Location.split(' ').joinToString(" ") { it.capitalize() }
+
+        NetworkConnection(Location,handler).execute()
     }
 
 

@@ -28,7 +28,7 @@ class NetworkConnection(CityName:String,handler: Handler?) : AsyncTask<Void, Voi
         getCardService!!
             .getAPI()
             //.getResultsCityVal(CityName)
-            .getResultsCityVal("11ae2179d2274486af175122190309","Kolkata")
+            .getResultsCityVal("11ae2179d2274486af175122190309",CityName)
             .enqueue(object : Callback<ReturnWeatherValue> {
                 override fun onResponse(call: Call<ReturnWeatherValue>, response: Response<ReturnWeatherValue>) {
                     Log.e("post", response.message())
